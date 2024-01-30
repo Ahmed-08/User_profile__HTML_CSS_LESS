@@ -1,0 +1,194 @@
+@bgcolor: #0262A4;
+@lightTxtColor: #fff;
+@fnfamily: Arial, Helvetica, sans-serif;
+
+
+.sizesOfBlocks(@w, @h){
+    width: @w;
+    height: @h;
+}
+
+.boxShadow(@x, @y, @r, @cl){
+    box-shadow: @x @y @r @cl;
+}
+
+.flex(@dir, @side){
+    display: flex;
+    flex-direction: @dir;
+    justify-content: @side;
+}
+
+
+.menuPanel(){
+
+    color: blue;
+    font-family: @fnfamily;
+    padding: 0.7em;
+
+    a{
+        text-decoration: none;
+        vertical-align: top;
+    }
+}
+
+.page{
+
+    header{
+        background-color: @bgcolor;
+        color: @lightTxtColor;
+        .boxShadow(0, 0, 5px, black);
+        .flex(row, space-between);
+        align-items: center;
+        padding-left: 4em;
+        padding-right: 1em;
+
+        .logo{
+            font-family: @fnfamily;
+            font-size: 200%;
+        }
+
+        .photo{
+            .flex(row, space-between);
+            align-items: center;
+            img, .fullname{
+                display: inline-block;
+                margin: 0.5em;
+                font-family: @fnfamily;
+            }
+        }
+    }
+
+    
+    main{
+        hr{
+            width: 95%;
+            opacity: 0.4;
+        }
+
+        width: 100%;
+        display: flex;
+        gap: 1em;
+        padding: 1em;
+        font-family: @fnfamily;
+
+        .menu{
+            padding: 1em;
+
+            div{
+                .menuPanel();
+            }
+
+            div:hover{
+                background-color: #E4F6FE;
+            }
+        }
+
+
+        .container{
+            padding: 1em;
+            .image, button{
+                display: block;
+                margin: 0 auto;
+            }
+
+            button{
+                background-color: @bgcolor;
+                width: 90%;
+                color: @lightTxtColor;
+                margin: 0.5em auto;
+                padding: 0.5em;
+                border: none;
+                .boxShadow(0, 0, 5px, black);
+                cursor: pointer;
+            }
+
+            .friends{
+                height: 15%;
+                .grid{
+                    display: grid;
+                    height: 100%;
+                    grid-template-columns: 33% 33% 33%;
+                    grid-template-rows: 50% 50%;
+                    margin-top: 1em;
+                    
+                    div{
+                        .flex(row, center);
+                        img{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-block{
+            width: 58%;
+            .flex(column, center);
+
+            .up{
+                margin: 1em;
+                padding: 1em;
+                .boxShadow(0, 0, 5px, black);
+    
+                .name{
+                    font-size: 150%;
+                    opacity: 0.7;
+                }
+    
+                .about{
+                    .about-dt{
+                        width: 50%;
+                        .flex(row, space-between);
+    
+                        .first{
+                            opacity: 0.5;
+                        }
+    
+                        .second{
+                            color: @bgcolor;
+                        }
+                    }
+                }
+    
+                .data-page{
+                    .flex(row, space-around);
+                    div{
+                        text-align: center;
+                        font-weight: 700;
+                        color: @bgcolor;
+                    }
+                }
+            }
+        
+            .text{
+                margin: 1em;
+                padding: 1em;
+                .boxShadow(0, 0, 5px, black);
+                .flex(column, center);
+                .header{
+                    .flex(row, start);
+                    gap: 2em;
+                }
+
+
+                .footer{
+                    .flex(row, space-between);
+                    
+                    width: 13em;
+                    div{
+                        width: 25%;
+                        .flex(row, space-between);
+                        align-items: center;
+                        color: orange;
+
+                        img{
+                            cursor: pointer;
+                        }
+                    }
+                } 
+            }
+        }
+
+
+    }
+}
